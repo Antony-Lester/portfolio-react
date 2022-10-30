@@ -1,0 +1,2 @@
+.menu{position: relative; display: block; height: 15vmin; width: 15vmin ; opacity: 0.5; flex-grow: 1; flex-shrink: 1; transition: all 0.3s linear;}
+.menu:hover{opacity: 1;}
