@@ -4,9 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import Header from './header';
 import MenuLeft from './menu-left';
-
-
-
+import Certs from './Certs';
 import MenuRight from './menu-right';
 import Footer from './footer';
 
@@ -16,8 +14,10 @@ function App() {
       <Header/>
       <MenuLeft/>
       <BrowserRouter>
-      <div className='main'/>
-        
+        <Routes>
+              <Route path='/' element={<Certs/>}/>
+              <Route path='/certs' element={<Certs/>} />
+        </Routes>
       </BrowserRouter>
       <MenuRight/>
       <Footer/>
@@ -29,7 +29,6 @@ export default App;
 
 //look at on hover change description in footer
 
-//cert
 //linkedin
 //minesweeper
 //terminal

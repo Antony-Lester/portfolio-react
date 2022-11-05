@@ -5,3 +5,28 @@
     right:15vmin;
     bottom: 5vmin;
 }
+.scroll{
+    display: flex;
+    padding: 5vmin;
+    margin: 5vmin;
+    align-items: center;
+    justify-content: space-between;
+    direction: ltr;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+::-webkit-scrollbar {
+width: 2vmin;
+}
+::-webkit-scrollbar-track {
+border-radius: 12px;
+background-color: #9a9a9a;
+}
+::-webkit-scrollbar-thumb {
+border-radius: 12px;
+background-color: #c1c1c1;
+}
+
