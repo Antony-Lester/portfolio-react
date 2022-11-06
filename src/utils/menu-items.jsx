@@ -10,15 +10,20 @@ import dove from '../images/menu/dove.svg'
 //major projects
 import project from '../images/menu/team-project.svg'
 
+/*
+{ src: playStore, alt: 'play-store', path:`/playstore`},
+{ src: terminal, alt: 'retro-terminal', path:``},
+{ src: minesweeper, alt: 'minesweeper', path:`` },
+{ src: collatz, alt: 'collatz-conjecture', path:`` },
+{ src: dove, alt: 'dove-animation', path:`` },
+{ src: project, alt: 'team-project', path:`` }
+*/
+
+
 export const menuItemsLeft = [
     { src: cert, alt: 'certificates', path:`/certs`},
-    { src: linkedin, alt: 'linkedin', path:`/linkedin`},
-    { src: playStore, alt: 'play-store', path:``},
-    { src: terminal, alt: 'retro-terminal', path:``},
+    { src: linkedin, alt: 'linkedin', path: `/linkedin` },
 ]
+    
 export const menuItemsRight = [
-    { src: minesweeper, alt: 'minesweeper', path:`` },
-    { src: collatz, alt: 'collatz-conjecture', path:`` },
-    { src: dove, alt: 'dove-animation', path:`` },
-    { src: project, alt: 'team-project', path:`` }
 ]

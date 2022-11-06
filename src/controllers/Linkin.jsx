@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-
-
 export default function Linkin() { 
     useEffect(() => {
         const script = document.createElement('script');
@@ -17,7 +15,6 @@ export default function Linkin() {
           <div className="main">
               <div className="center">
               <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="antony-lester" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/antony-lester?trk=profile-badge"></a></div>
-              
               </div>
         </div>
       );

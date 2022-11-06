@@ -9,6 +9,7 @@ import MenuRight from './menu-right';
 import Footer from './footer';
 import Linkin from './Linkin';
 
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +20,8 @@ function App() {
         <Routes>
               <Route path='/' element={<></>}/>
           <Route path='/certs' element={<Certs />}/>
-          <Route path='/linkedin' element={<Linkin/>}/>
+          <Route path='/linkedin' element={<Linkin />} />
+          
         </Routes>
         <MenuRight />
         </BrowserRouter>
