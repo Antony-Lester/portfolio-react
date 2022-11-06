@@ -12,7 +12,7 @@ import project from '../images/menu/team-project.svg'
 
 export const menuItemsLeft = [
     { src: cert, alt: 'certificates', path:`/certs`},
-    { src: linkedin, alt: 'linkedin', path:``},
+    { src: linkedin, alt: 'linkedin', path:`/linkedin`},
     { src: playStore, alt: 'play-store', path:``},
     { src: terminal, alt: 'retro-terminal', path:``},
 ]

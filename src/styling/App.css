@@ -29,4 +29,12 @@ background-color: #9a9a9a;
 border-radius: 12px;
 background-color: #c1c1c1;
 }
+.center{
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    top:50%;Left:50%;
+    -ms-transform: translate(50%,50%);
+    transform: translate(-50%,-50%);
+}
 

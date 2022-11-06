@@ -7,6 +7,7 @@ import MenuLeft from './menu-left';
 import Certs from './Certs';
 import MenuRight from './menu-right';
 import Footer from './footer';
+import Linkin from './Linkin';
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
       
         <Routes>
               <Route path='/' element={<></>}/>
-              <Route path='/certs' element={<Certs/>} />
+          <Route path='/certs' element={<Certs />}/>
+          <Route path='/linkedin' element={<Linkin/>}/>
         </Routes>
-      
         <MenuRight />
         </BrowserRouter>
       <Footer/>
