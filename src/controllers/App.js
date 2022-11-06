@@ -8,7 +8,7 @@ import Certs from './Certs';
 import MenuRight from './menu-right';
 import Footer from './footer';
 import Linkin from './Linkin';
-
+import Converter from './Converter';
 
 function App() {
   return (
@@ -18,10 +18,10 @@ function App() {
       <MenuLeft/>
       
         <Routes>
-              <Route path='/' element={<></>}/>
-          <Route path='/certs' element={<Certs />}/>
-          <Route path='/linkedin' element={<Linkin />} />
-          
+          <Route path='/' element={<></>}/>
+          <Route path='/certs' element={<Certs/>}/>
+          <Route path='/linkedin' element={<Linkin/>}/>
+          <Route path='/converter' element={<Converter/>}/>
         </Routes>
         <MenuRight />
         </BrowserRouter>

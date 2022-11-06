@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+form{
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    height: auto;
+    width: auto;
+    transform: translate(-50%, 0%);
+    padding: 0.7%;
+    border-radius: 12px;
+    background-color: #262626;
+    display:inline;
+}
+
+fieldset {
+    font-size: 4vmin;
+    color: #262626;
+    font-style: bold;
+    font-family: "Montserrat", sans-serif; 
+    background-color: #9a9a9a;
+    border-style: none;
+    border-radius: 12px;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+@media (max-width: 1100px) {
+  fieldset {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.results{
+    display: flex; min-height: 5vh;max-height: 50vh;width: auto;margin-top: 1vmin;
+    padding-top: 5%; padding-bottom: 5%;
+    flex-wrap: nowrap; justify-content: center;
+    direction: ltr; scroll-behavior: smooth; overflow-y: auto;
+    overflow-x: hidden; flex-direction: column;
+    background-color: #9a9a9a; border: #9a9a9a solid 1.1vmin; border-radius: 12px;
+}::-webkit-scrollbar {width: 1vmin;}
+::-webkit-scrollbar-track {background-color: #9a9a9a;}
+::-webkit-scrollbar-thumb {background-color: #262626;}
+
+.resultsCard{
+    padding-top: 1vmin;padding-bottom: 1vmin;margin-top: 1vmin;
+    border: #262626 solid 1vmin;border-radius: 12px;
+    color: #262626;text-align: center;}
