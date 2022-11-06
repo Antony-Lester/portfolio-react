@@ -9,6 +9,7 @@ import MenuRight from './menu-right';
 import Footer from './footer';
 import Linkin from './Linkin';
 import Converter from './Converter';
+import Calculator from './Calculator';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/certs' element={<Certs/>}/>
           <Route path='/linkedin' element={<Linkin/>}/>
           <Route path='/converter' element={<Converter/>}/>
+          <Route path='/calculator' element={<Calculator className='main'/>}/>
         </Routes>
         <MenuRight />
         </BrowserRouter>

@@ -1,0 +1,24 @@
+#background{
+    position:absolute;
+    top: 0;
+    right:50vw;
+    width: 40vw;
+    height: 75vh;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+    align-items: flex-end;
+    align-content:space-between;
+    transform: translate(0%, 20%);
+}
+@media only screen and (max-width: 800px) {
+    #background{
+        position:absolute;
+    top: 0;
+    right:0;
+    width: 0;
+    height: 0;
+    }
+  }
