@@ -35,8 +35,6 @@ function App() {
 export default App;
 
 //look at on hover change description in footer
-
-//linkedin
 //minesweeper
 //terminal
 //solo-project (front and back end)
