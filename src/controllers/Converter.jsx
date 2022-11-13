@@ -31,14 +31,13 @@ export default function Converter() {
     if (value !== null && from !== null && event.target.value !== null) { setResult([conversion(value, from, event.target.value),...result]) }
     event.preventDefault()
   }
-  
-    //useEffect(() => {console.log(result)}, [result])
 
   return ( 
   <>
-    <span><form>
+      <form>
         <fieldset>
-        <span htmlFor="value">Convert&nbsp;</span>
+        <span><u>Distance Converter</u></span>
+        <label htmlFor="value">&nbsp;Value&nbsp;</label>
         <input name="value" type="text" id="inputValue" onChange={handleValue} />
         <span htmlFor="conversion">&nbsp;from&nbsp;</span>
         <select name="conversion" id="conversions" onChange={handleFrom}><Option/></select>
@@ -46,7 +45,7 @@ export default function Converter() {
         <select name="conversion" id="conversions" onChange={handleTo}><Option /></select>
               </fieldset>
               <div className='results'>{[...result].map((result, i) => <div className='resultsCard' key={i}>{result}</div>)}</div>
-    </form></span>
+    </form>
           
    </>
   );

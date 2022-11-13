@@ -26,9 +26,7 @@ export const menuItemsLeft = [
     { src: cert, alt: 'certificates', path:`/certs`},
     { src: linkedin, alt: 'linkedin', path: `/linkedin` },
     { src: convert, alt: 'converter', path: `/converter` },
-    { src: calculator, alt: 'calculator', path: `/calculator`}
+    { src: calculator, alt: 'calculator', path: `/calculator`},
 ]
     
-export const menuItemsRight = [
-    
-]
+export const menuItemsRight = []

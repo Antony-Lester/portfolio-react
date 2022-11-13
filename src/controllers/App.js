@@ -17,13 +17,12 @@ function App() {
       <Header/>
       <BrowserRouter>
       <MenuLeft/>
-      
         <Routes>
-          <Route path='/' element={<></>}/>
-          <Route path='/certs' element={<Certs/>}/>
-          <Route path='/linkedin' element={<Linkin/>}/>
-          <Route path='/converter' element={<Converter/>}/>
-          <Route path='/calculator' element={<Calculator className='main'/>}/>
+          <Route key="root" path='/' element={<></>}/>
+          <Route key="certs" path='/certs' element={<Certs className='main'/>}/>
+          <Route key="linkedin" path='/linkedin' element={<Linkin className='main'/>}/>
+          <Route key="converter" path='/converter' element={<Converter className='main'/>}/>
+          <Route key="calculator" path='/calculator' element={<Calculator className='main'/>}/>
         </Routes>
         <MenuRight />
         </BrowserRouter>

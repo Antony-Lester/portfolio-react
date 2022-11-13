@@ -1,16 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,700&display=swap');
 form{
     margin: 0;
     position: absolute;
-    top: 10%;
+    top: 50%;
     left: 50%;
     height: auto;
     width: auto;
-    transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     padding: 0.7%;
     border-radius: 12px;
-    background-color: #262626;
+    background-color: #2C3531;
     display:inline;
+    font-family: "Montserrat", sans-serif;
 }
 
 fieldset {
@@ -18,7 +21,7 @@ fieldset {
     color: #262626;
     font-style: bold;
     font-family: "Montserrat", sans-serif; 
-    background-color: #9a9a9a;
+    background-color: #FFCB9A;
     border-style: none;
     border-radius: 12px;
     height: auto;
@@ -37,17 +40,21 @@ fieldset {
 }
 
 .results{
-    display: flex; min-height: 5vh;max-height: 50vh;width: auto;margin-top: 1vmin;
-    padding-top: 5%; padding-bottom: 5%;
+    display: flex; ;max-height: 30vh;width: auto; height: auto;margin-top: 1vmin;
+    
     flex-wrap: nowrap; justify-content: center;
     direction: ltr; scroll-behavior: smooth; overflow-y: auto;
     overflow-x: hidden; flex-direction: column;
-    background-color: #9a9a9a; border: #9a9a9a solid 1.1vmin; border-radius: 12px;
+    background-color: #116466; border-radius: 12px;
+    font-family: 'Source Code Pro', monospace;
 }::-webkit-scrollbar {width: 1vmin;}
 ::-webkit-scrollbar-track {background-color: #9a9a9a;}
 ::-webkit-scrollbar-thumb {background-color: #262626;}
 
 .resultsCard{
-    padding-top: 1vmin;padding-bottom: 1vmin;margin-top: 1vmin;
-    border: #262626 solid 1vmin;border-radius: 12px;
-    color: #262626;text-align: center;}
+    padding: 1vmin;margin-top: 1vmin;
+    color: #d1e8e2;text-align: center;}
+span{text-align: center;color: #2C3531;}
+label{text-align: center;color: #2C3531;}
+
+Option{text-align: center;}
