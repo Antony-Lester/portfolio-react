@@ -19,10 +19,10 @@ function App() {
       <MenuLeft/>
         <Routes>
           <Route key="root" path='/' element={<></>}/>
-          <Route key="certs" path='/certs' element={<Certs className='main'/>}/>
-          <Route key="linkedin" path='/linkedin' element={<Linkin className='main'/>}/>
-          <Route key="converter" path='/converter' element={<Converter className='main'/>}/>
-          <Route key="calculator" path='/calculator' element={<Calculator className='main'/>}/>
+          <Route key="certs" path='/certs' element={<Certs/>}/>
+          <Route key="linkedin" path='/linkedin' element={<Linkin/>}/>
+          <Route key="converter" path='/converter' element={<Converter/>}/>
+          <Route key="calculator" path='/calculator' element={<Calculator/>}/>
         </Routes>
         <MenuRight />
         </BrowserRouter>

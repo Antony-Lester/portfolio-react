@@ -1,20 +1,16 @@
+import linkinImg from '../images/linkin/linkedin.png';
+import '../styling/Linkin.css';
 
-import { useEffect } from "react";
-export default function Linkin() { 
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://platform.linkedin.com/badges/js/profile.js';
-        script.async = true;
-        script.defer = true;
-        document.body.appendChild(script);
-        return () => {document.body.removeChild(script);};
-      }, []);
-    
-  return (
-        <div className="main">
-        <div className="center">
-        <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="antony-lester" data-version="v1"><a className="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/antony-lester?trk=profile-badge"></a></div>
-        </div>
-  </div>
-      );
-} 
+export default function Linkin() {
+	return (
+		<div className="main">
+			<div className="center">
+				<a
+					href="https://www.linkedin.com/in/antony-lester"
+					rel="noreferrer">
+					<img src={linkinImg} alt="" className="round" />
+				</a>
+			</div>
+		</div>
+	);
+}
