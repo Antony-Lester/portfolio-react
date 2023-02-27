@@ -1,7 +1,5 @@
 #  My Portfolio Web App
 
-## Check it out:
+links to some mini projects, certificates, and other projects still under construction
 
-//This is not yet deployed.. 
-
-But my old site is here <https://antonylester.com/> 
+## Work In Progress: Check it out: <https://antonylester.com/> 
