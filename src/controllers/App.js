@@ -10,6 +10,7 @@ import Footer from './footer';
 import Linkin from './Linkin';
 import Converter from './Converter';
 import Calculator from './Calculator';
+import Team from './Team'
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Route key="certs" path='/certs' element={<Certs/>}/>
           <Route key="linkedin" path='/linkedin' element={<Linkin/>}/>
           <Route key="converter" path='/converter' element={<Converter/>}/>
-          <Route key="calculator" path='/calculator' element={<Calculator/>}/>
+          <Route key="calculator" path='/calculator' element={<Calculator />} />
+          <Route key="team" path='/find-n-dine' element={<Team/>}/>
         </Routes>
         <MenuRight />
         </BrowserRouter>

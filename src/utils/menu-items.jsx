@@ -18,15 +18,18 @@ import project from '../images/menu/team-project.svg'
 { src: minesweeper, alt: 'minesweeper', path:`` },
 { src: collatz, alt: 'collatz-conjecture', path:`` },
 { src: dove, alt: 'dove-animation', path:`` },
-{ src: project, alt: 'team-project', path:`` }
+
 */
 
 
 export const menuItemsLeft = [
     { src: cert, alt: 'certificates', path:`/certs`},
     { src: linkedin, alt: 'linkedin', path: `/linkedin` },
+    { src: project, alt: 'team-project', path:`/find-n-dine` }
+]
+    
+export const menuItemsRight = [
+    
     { src: convert, alt: 'converter', path: `/converter` },
     { src: calculator, alt: 'calculator', path: `/calculator`},
 ]
-    
-export const menuItemsRight = []
