@@ -33,6 +33,23 @@ export default function Team() {
           of Agile Methodology, Test-Driven-Development (TDD), pair programming,
           Scrum, Spiking, & Documentation.
         </p>
+        <p>
+          <a
+            href='https://github.com/Antony-Lester/find-and-dine-frontend'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Front-end Code Git Repository
+          </a>
+          <br />
+          <a
+            href='https://github.com/Antony-Lester/find-and-dine-backend'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Back-end Code Git Repository
+          </a>
+        </p>
       </div>
       <img className='slide' src={main} alt='' />
       <img className='slide' src={team} alt='' />
