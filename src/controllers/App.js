@@ -12,6 +12,8 @@ import Converter from './Converter';
 import Calculator from './Calculator';
 import Team from './Team'
 import DateApp from './Date'
+import Servers from './Servers';
+import Website from './Website';
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
           <Route key='converter' path='/converter' element={<Converter />} />
           <Route key='calculator' path='/calculator' element={<Calculator />} />
           <Route key='team' path='/find-n-dine' element={<Team />} />
-          <Route key='date' path='/dating-app' element={<DateApp/>} />
+          <Route key='date' path='/dating-app' element={<DateApp />} />
+          <Route key='servers' path='/servers' element={<Servers />} />
+          <Route key='website' path='/website' element={<Website />} />
         </Routes>
         <MenuRight />
       </BrowserRouter>
