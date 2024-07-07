@@ -1,6 +1,15 @@
 export default function Website() {
   return (
-    <div className='main'>
+    <div
+      className='main'
+      style={{
+        flexDirection: 'column',
+        overflow: 'auto',
+        height: '100vh',
+        paddingBottom: '75%',
+        color: '#4B4B4B',
+      }}
+    >
       <h2 style={{ color: '#4B4B4B', textAlign: 'center' }}>
         Vanilla JavaScript Website
       </h2>
@@ -35,8 +44,8 @@ export default function Website() {
       <iframe
         src='https://portfolio-f4791.web.app'
         title='Embedded Site'
-        width='80%'
-        height='80%'
+        width='90%'
+        height='180%'
         style={{ border: 'none' }}
       ></iframe>
     </div>
