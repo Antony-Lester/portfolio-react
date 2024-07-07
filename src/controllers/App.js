@@ -11,26 +11,28 @@ import Linkin from './Linkin';
 import Converter from './Converter';
 import Calculator from './Calculator';
 import Team from './Team'
+import DateApp from './Date'
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
+    <div className='App'>
+      <Header />
       <BrowserRouter>
-      <MenuLeft/>
+        <MenuLeft />
         <Routes>
-          <Route key="root" path='/' element={<></>}/>
-          <Route key="certs" path='/certs' element={<Certs/>}/>
-          <Route key="linkedin" path='/linkedin' element={<Linkin/>}/>
-          <Route key="converter" path='/converter' element={<Converter/>}/>
-          <Route key="calculator" path='/calculator' element={<Calculator />} />
-          <Route key="team" path='/find-n-dine' element={<Team/>}/>
+          <Route key='root' path='/' element={<></>} />
+          <Route key='certs' path='/certs' element={<Certs />} />
+          <Route key='linkedin' path='/linkedin' element={<Linkin />} />
+          <Route key='converter' path='/converter' element={<Converter />} />
+          <Route key='calculator' path='/calculator' element={<Calculator />} />
+          <Route key='team' path='/find-n-dine' element={<Team />} />
+          <Route key='date' path='/dating-app' element={<DateApp/>} />
         </Routes>
         <MenuRight />
-        </BrowserRouter>
-      <Footer/>
+      </BrowserRouter>
+      <Footer />
     </div>
-  );
+  )
 }
 
 export default App;

@@ -1,0 +1,16 @@
+.main {
+        display: 'flex';
+            flex-direction: 'column';
+            overflow: 'auto';
+            height: '100vh';
+            padding-bottom: '75%';
+            text-align: center;
+    }
+.video-container{
+    width: 100%;
+}
+.screenshot-container{
+    min-height: 100px;
+    height: 70vh;
+    border-radius: 50px;
+}

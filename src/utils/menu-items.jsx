@@ -29,7 +29,7 @@ export const menuItemsLeft = [
 ]
     
 export const menuItemsRight = [
-    
-    { src: convert, alt: 'converter', path: `/converter` },
-    { src: calculator, alt: 'calculator', path: `/calculator`},
+  { src: convert, alt: 'converter', path: `/converter` },
+  { src: calculator, alt: 'calculator', path: `/calculator` },
+  { src: playStore, alt: 'dating app', path: `/dating-app` },
 ]
