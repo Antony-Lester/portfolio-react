@@ -1,6 +1,8 @@
 import '../styling/Date.css'
 import login from '../images/dating/amore_login.png'
 import mvp from '../images/dating/mvp.png'
+import swipe1 from '../images/dating/swipe1.png'
+import swipe2 from '../images/dating/swipe2.png'
 export default function DateApp() {
   return (
     <div
@@ -72,7 +74,39 @@ export default function DateApp() {
       >
         Front-end Code Git Repository
       </a>
-      <img className='cert' src={mvp} alt='northcoders bootcamp cert' />
+      <a
+        href='https://github.com/Antony-Lester/Dating-App/blob/main/mvp-base-front.png'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <img className='mvp' src={mvp} alt='northcoders bootcamp cert' />
+      </a>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: '100%',
+        }}
+      >
+        <a
+          href='https://github.com/Antony-Lester/Dating-App/blob/main/app/Pages/Swipe-Components/Card.tsx'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <img
+            className='screenshot-container-side'
+            src={swipe1}
+            alt='swipe screenshot'
+            style={{ width: 'calc(50% - 20px)' }} // Adjust 5px to increase or decrease the gap
+          />
+          <img
+            className='screenshot-container-side'
+            src={swipe2}
+            alt='swipe screenshot'
+            style={{ width: 'calc(50% - 20px)' }} // Adjust 5px to increase or decrease the gap
+          />
+        </a>
+      </div>
     </div>
   )
 }
