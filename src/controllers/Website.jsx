@@ -1,3 +1,5 @@
+import '../styling/Website.css'
+
 export default function Website() {
   return (
     <div
@@ -41,13 +43,15 @@ export default function Website() {
         <br />
         <br />
       </p>
-      <iframe
-        src='https://portfolio-f4791.web.app'
-        title='Embedded Site'
-        width='90%'
-        height='180%'
-        style={{ border: 'none' }}
-      ></iframe>
+      <div className='website-container'>
+        <iframe
+          src='https://portfolio-f4791.web.app'
+          title='Embedded Site'
+          width='100%' // Use 100% to make it responsive and fit the container's width
+          height='100%' // Adjust the height to maintain a fair size, e.g., 75% of the viewport height
+          style={{ border: 'none', maxWidth: '100vw', maxHeight: '100vh' }} // Ensure it doesn't exceed the viewport's dimensions// Ensure it doesn't exceed the viewport's dimensions
+        ></iframe>
+      </div>
     </div>
   )
 }
