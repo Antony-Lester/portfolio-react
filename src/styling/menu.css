@@ -1,2 +1,37 @@
-.menu{position: relative; display: block; height: 15vmin; width: 15vmin ; opacity: 0.5; flex-grow: 1; flex-shrink: 1; transition: all 0.3s linear;}
-.menu:hover{opacity: 1;}
+/* Mobile-first menu items */
+.menu {
+    position: relative;
+    display: block;
+    height: 40px;
+    width: 40px;
+    opacity: 0.7;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0) saturate(100%) invert(27%) sepia(8%) saturate(1265%) hue-rotate(237deg) brightness(95%) contrast(87%);
+}
+
+.menu:hover {
+    opacity: 1;
+    filter: brightness(0) saturate(100%) invert(40%) sepia(21%) saturate(1265%) hue-rotate(237deg) brightness(95%) contrast(87%);
+}
+
+.menu:active {
+    transform: scale(0.95);
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+    .menu {
+        height: 48px;
+        width: 48px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .menu {
+        height: 15vmin;
+        width: 15vmin;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}

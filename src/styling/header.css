@@ -1,3 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-header {position: absolute; top: 0; left: 15vmin; height: 4vmin; right: 15vmin; text-align: center;
-	vertical-align: middle; line-height: 4vmin; font-family: 'Pacifico'; font-size: 5vmin; opacity: 0.5; margin-top: 1vmin;}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Mobile-first header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 56px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    z-index: 1000;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+                0 4px 5px 0 rgba(0, 0, 0, 0.14),
+                0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+    header {
+        position: absolute;
+        top: 16px;
+        left: 80px;
+        right: 80px;
+        height: 64px;
+        line-height: 64px;
+        font-size: 24px;
+        border-radius: 16px;
+        background: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    header {
+        top: 1vmin;
+        left: 15vmin;
+        right: 15vmin;
+        height: 4vmin;
+        line-height: 4vmin;
+        font-size: 5vmin;
+        border-radius: 2vmin;
+    }
+}

@@ -1,11 +1,9 @@
 import '../styling/App.css';
 
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './header';
-import MenuLeft from './menu-left';
 import Certs from './Certs';
-import MenuRight from './menu-right';
 import Footer from './footer';
 import Linkin from './Linkin';
 import Converter from './Converter';
@@ -18,9 +16,8 @@ import Website from './Website';
 function App() {
   return (
     <div className='App'>
-      <Header />
       <BrowserRouter>
-        <MenuLeft />
+        <Header />
         <Routes>
           <Route key='root' path='/' element={<></>} />
           <Route key='certs' path='/certs' element={<Certs />} />
@@ -32,7 +29,6 @@ function App() {
           <Route key='servers' path='/servers' element={<Servers />} />
           <Route key='website' path='/website' element={<Website />} />
         </Routes>
-        <MenuRight />
       </BrowserRouter>
       <Footer />
     </div>

@@ -1,37 +1,79 @@
-body {top: 0; left: 0; width: 100vw; height: 100vh; margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+/* Material Design 3 Color Tokens */
+:root {
+  /* Primary colors */
+  --md-sys-color-primary: #6750a4;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #e8def8;
+  --md-sys-color-on-primary-container: #21005e;
+  
+  /* Secondary colors */
+  --md-sys-color-secondary: #625b71;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #e8def8;
+  --md-sys-color-on-secondary-container: #1e192b;
+  
+  /* Tertiary colors */
+  --md-sys-color-tertiary: #7d5260;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #ffd8e4;
+  --md-sys-color-on-tertiary-container: #31101d;
+  
+  /* Error colors */
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-on-error-container: #410002;
+  
+  /* Surface colors */
+  --md-sys-color-surface: #fef7ff;
+  --md-sys-color-on-surface: #1d1b20;
+  --md-sys-color-surface-variant: #e7e0ec;
+  --md-sys-color-on-surface-variant: #49454f;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #f7f2fa;
+  --md-sys-color-surface-container: #f3edf7;
+  --md-sys-color-surface-container-high: #ece6f0;
+  --md-sys-color-surface-container-highest: #e6e0e9;
+  
+  /* Outline colors */
+  --md-sys-color-outline: #79747e;
+  --md-sys-color-outline-variant: #cac4d0;
+  
+  /* Shadow and scrim */
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+}
+
+/* Mobile-first responsive body */
+body {
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  height: 100vh; 
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-	overflow-y: hidden;
-	overflow-x: hidden;
-	background-image: -o-linear-gradient(
-		to right,
-		#656565,
-		#9a9a9a,
-		#9a9a9a,
-		#656565
-	);
-	background-image: -moz-linear-gradient(
-		to right,
-		#656565,
-		#9a9a9a,
-		#9a9a9a,
-		#656565
-	);
-	background-image: -webkit-linear-gradient(
-		to right,
-		#656565,
-		#9a9a9a,
-		#9a9a9a,
-		#656565
-	);
-	background-image: linear-gradient(
-		to right,
-		#656565,
-		#9a9a9a,
-		#9a9a9a,
-		#656565
-	);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+  body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/* Box sizing reset */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
