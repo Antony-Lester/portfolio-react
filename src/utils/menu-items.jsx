@@ -23,15 +23,15 @@ import project from '../images/menu/team-project.svg'
 
 
 export const menuItemsLeft = [
-    { src: cert, alt: 'certificates', path:`/certs`},
-    { src: linkedin, alt: 'linkedin', path: `/linkedin` },
-    { src: project, alt: 'team-project', path:`/find-n-dine` }
+    { src: cert, alt: 'Certificates', path:`/certs`},
+    { src: linkedin, alt: 'LinkedIn', path: `/linkedin` },
+    { src: project, alt: 'Team Project', path:`/find-n-dine` }
 ]
     
 export const menuItemsRight = [
-  { src: playStore, alt: 'dating app', path: `/dating-app` },
-  { src: terminal, alt: 'servers', path: `/servers` },
-  { src: dove, alt: 'dove-animation', path: `/website` },
-  { src: convert, alt: 'converter', path: `/converter` },
-  { src: calculator, alt: 'calculator', path: `/calculator` },
+  { src: playStore, alt: 'Dating App', path: `/dating-app` },
+  { src: terminal, alt: 'Servers', path: `/servers` },
+  { src: dove, alt: 'Website', path: `/website` },
+  { src: convert, alt: 'Converter', path: `/converter` },
+  { src: calculator, alt: 'Calculator', path: `/calculator` },
 ]

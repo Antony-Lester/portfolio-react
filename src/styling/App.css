@@ -1,34 +1,38 @@
 /* Mobile-first responsive layout */
 .main{
     position: absolute;
-    top: 56px; /* Mobile header height */
+    top: 64px; /* Header height */
     left: 0;
     right: 0;
-    bottom: 56px; /* Mobile navigation height */
-    padding: 16px 8px;
+    bottom: 0; /* No footer */
+    padding: 16px;
     background: var(--md-sys-color-surface-container-low);
-    border-radius: 16px 16px 0 0;
-    margin: 0 4px 0 4px;
+    border-radius: 0;
+    margin: 0;
 }
 
 /* Tablet breakpoint */
 @media (min-width: 600px) {
     .main {
-        top: 16px;
-        left: 80px;
-        right: 80px;
+        top: 80px;
+        left: 16px;
+        right: 16px;
         bottom: 16px;
-        padding: 0;
+        padding: 24px;
+        border-radius: 16px;
+        margin: 0;
     }
 }
 
 /* Desktop breakpoint */
 @media (min-width: 1024px) {
     .main {
-        top: 5vmin;
-        left: 15vmin;
-        right: 15vmin;
+        top: 80px;
+        left: 5vmin;
+        right: 5vmin;
         bottom: 5vmin;
+        padding: 32px;
+        border-radius: 24px;
     }
 }
 

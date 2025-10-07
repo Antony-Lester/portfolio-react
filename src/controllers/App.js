@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './header';
 import Certs from './Certs';
-import Footer from './footer';
 import Linkin from './Linkin';
 import Converter from './Converter';
 import Calculator from './Calculator';
@@ -30,7 +29,6 @@ function App() {
           <Route key='website' path='/website' element={<Website />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { loadCertificates, handleCertificateClick, getCertificateIcon } from '../utils/cert-loader';
+import { loadCertificates, handleCertificateClick } from '../utils/cert-loader';
+import PdfCard from '../components/PdfCard';
 import '../styling/Certs.css'
 
 export default function Certs() { 
@@ -52,29 +53,28 @@ export default function Certs() {
         <div className='main scroll'>
             <div className='certs-header'>
                 <h2>My Certificates</h2>
-                <p>{certs.length} certificate{certs.length !== 1 ? 's' : ''} found</p>
             </div>
             <div className='certs-grid'>
                 {certs.map((cert, index) => (
-                    <div 
-                        key={index} 
-                        className={`cert-card ${cert.isPdf ? 'cert-pdf' : 'cert-image'}`}
-                        onClick={() => handleCertificateClick(cert)}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                                handleCertificateClick(cert);
-                            }
-                        }}
-                    >
-                        {cert.isPdf ? (
-                            <div className='cert-pdf-preview'>
-                                {getCertificateIcon(cert)}
-                                <h3 className='cert-name'>{cert.displayName}</h3>
-                                <p className='cert-type'>PDF Document</p>
-                            </div>
-                        ) : (
+                    cert.isPdf ? (
+                        <PdfCard 
+                            key={index}
+                            cert={cert}
+                            onClick={() => handleCertificateClick(cert)}
+                        />
+                    ) : (
+                        <div 
+                            key={index} 
+                            className='cert-card cert-image'
+                            onClick={() => handleCertificateClick(cert)}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    handleCertificateClick(cert);
+                                }
+                            }}
+                        >
                             <div className='cert-image-container'>
                                 <img 
                                     className="cert-image" 
@@ -86,8 +86,8 @@ export default function Certs() {
                                     <h3 className='cert-name'>{cert.displayName}</h3>
                                 </div>
                             </div>
-                        )}
-                    </div>
+                        </div>
+                    )
                 ))}
             </div>
         </div>

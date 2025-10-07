@@ -1,3 +1,8 @@
+import { createPdfThumbnailCache } from './pdf-thumbnail';
+
+// Create a global thumbnail cache
+const thumbnailCache = createPdfThumbnailCache();
+
 // Utility to automatically load all certificates from the certs folder
 export const loadCertificates = () => {
   try {
@@ -25,6 +30,16 @@ export const loadCertificates = () => {
   } catch (error) {
     console.error('Error loading certificates:', error);
     return [];
+  }
+};
+
+// Function to get PDF thumbnail
+export const getPdfThumbnail = async (pdfUrl) => {
+  try {
+    return await thumbnailCache.getThumbnail(pdfUrl);
+  } catch (error) {
+    console.error('Error getting PDF thumbnail:', error);
+    return null;
   }
 };
 

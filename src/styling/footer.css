@@ -1,1 +1,41 @@
-footer {position: absolute; bottom: 0; left: 15vmin; height: 5vmin; right: 15vmin;}
+/* Modern footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface-variant);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    z-index: 999;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+    footer {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        height: 48px;
+        border-radius: 16px;
+        border: 1px solid var(--md-sys-color-outline-variant);
+        font-size: 14px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    footer {
+        bottom: 5vmin;
+        left: 5vmin;
+        right: 5vmin;
+        height: 5vmin;
+        border-radius: 2vmin;
+    }
+}
