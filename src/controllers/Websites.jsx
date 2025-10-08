@@ -1,5 +1,7 @@
 import '../styling/Websites.css'
 import { useState } from 'react'
+import { SiJavascript, SiReact, SiHtml5, SiCss3, SiFirebase } from 'react-icons/si'
+import { FaGlobe, FaCalculator } from 'react-icons/fa'
 import Calculator from './Calculator'
 
 export default function Websites() {
@@ -8,6 +10,18 @@ export default function Websites() {
   const renderJavaScriptWebsite = () => (
     <div className="website-section">
       <h3>Vanilla JavaScript Portfolio</h3>
+      
+      <div className="tech-stack">
+        <h4>Technology Stack:</h4>
+        <div className="tech-tags">
+          <span className="tech-tag javascript"><SiJavascript className="tech-icon" />JavaScript</span>
+          <span className="tech-tag html"><SiHtml5 className="tech-icon" />HTML5</span>
+          <span className="tech-tag css"><SiCss3 className="tech-icon" />CSS3</span>
+          <span className="tech-tag firebase"><SiFirebase className="tech-icon" />Firebase</span>
+          <span className="tech-tag web"><FaGlobe className="tech-icon" />Multi-Page</span>
+        </div>
+      </div>
+      
       <p>
         This website was built using Vanilla JavaScript, HTML5, CSS3 and hosted
         on Firebase (google). The website was designed to be a portfolio
@@ -48,6 +62,17 @@ export default function Websites() {
   const renderCalculator = () => (
     <div className="website-section">
       <h3>React Calculator</h3>
+      
+      <div className="tech-stack">
+        <h4>Technology Stack:</h4>
+        <div className="tech-tags">
+          <span className="tech-tag react"><SiReact className="tech-icon" />React.js</span>
+          <span className="tech-tag javascript"><SiJavascript className="tech-icon" />JavaScript</span>
+          <span className="tech-tag css"><SiCss3 className="tech-icon" />CSS3</span>
+          <span className="tech-tag calculator"><FaCalculator className="tech-icon" />Interactive</span>
+        </div>
+      </div>
+      
       <p>
         A fully functional calculator built with React.js featuring a modern design
         and smooth animations. The calculator handles basic arithmetic operations

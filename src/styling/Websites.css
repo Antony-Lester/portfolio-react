@@ -376,3 +376,56 @@
         font-size: 1.6rem !important;
     }
 }
+
+/* Technology Stack Styling */
+.tech-stack {
+    margin: 16px 0;
+    padding: 16px;
+    background: var(--md-sys-color-surface-container-low);
+    border-radius: 12px;
+}
+
+.tech-stack h4 {
+    color: var(--md-sys-color-on-surface);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+    border-radius: 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+    background: var(--md-sys-color-surface-container-high);
+    transform: translateY(-1px);
+}
+
+.tech-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Technology-specific colors */
+.tech-tag.javascript .tech-icon { color: #F7DF1E; }
+.tech-tag.react .tech-icon { color: #61DAFB; }
+.tech-tag.html .tech-icon { color: #E34F26; }
+.tech-tag.css .tech-icon { color: #1572B6; }
+.tech-tag.firebase .tech-icon { color: #FFCA28; }
+.tech-tag.calculator .tech-icon { color: var(--md-sys-color-primary); }

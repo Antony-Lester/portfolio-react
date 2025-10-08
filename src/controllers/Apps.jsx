@@ -1,5 +1,7 @@
 import '../styling/Apps.css'
 import { useState, useEffect } from 'react'
+import { SiKotlin, SiReact, SiTypescript, SiRedux, SiExpo } from 'react-icons/si'
+import { FaAndroid, FaMobile } from 'react-icons/fa'
 import login from '../images/dating/amore_login.png'
 import mvp from '../images/dating/mvp.png'
 import swipe1 from '../images/dating/swipe1.png'
@@ -38,6 +40,16 @@ export default function Apps() {
   const renderDatingApp = () => (
     <div className="app-section">
       <h2>Native Android Dating App</h2>
+      
+      <div className="tech-stack">
+        <h4>Technology Stack:</h4>
+        <div className="tech-tags">
+          <span className="tech-tag kotlin"><SiKotlin className="tech-icon" />Kotlin</span>
+          <span className="tech-tag android"><FaAndroid className="tech-icon" />Android</span>
+          <span className="tech-tag mobile"><FaMobile className="tech-icon" />Mobile Native</span>
+        </div>
+      </div>
+      
       <p>
         This dating app was built using the Kotlin programming language, being
         the successor to Java. For time management, the decision was made to
@@ -120,6 +132,17 @@ export default function Apps() {
         <img src={northcoders} alt="Northcoders bootcamp logo" className="northcoders-logo" />
         <h2>Team Project: "Find n' Dine"</h2>
         <h3>A convenient cross-platform app for curious foodies</h3>
+      </div>
+      
+      <div className="tech-stack">
+        <h4>Technology Stack:</h4>
+        <div className="tech-tags">
+          <span className="tech-tag react"><SiReact className="tech-icon" />React Native</span>
+          <span className="tech-tag typescript"><SiTypescript className="tech-icon" />TypeScript</span>
+          <span className="tech-tag expo"><SiExpo className="tech-icon" />Expo</span>
+          <span className="tech-tag redux"><SiRedux className="tech-icon" />Redux</span>
+          <span className="tech-tag mobile"><FaMobile className="tech-icon" />Cross-Platform</span>
+        </div>
       </div>
       
       <div className="team-description">

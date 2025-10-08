@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import '../styling/Servers.css'
+import { SiJavascript, SiNodedotjs, SiPostgresql, SiExpress, SiJest } from 'react-icons/si'
+import { FaServer } from 'react-icons/fa'
 import backend from '../images/team/backend.png'
 import learning from '../images/team/learning.png'
 import scope from '../images/team/scope.png'
@@ -31,6 +33,19 @@ export default function Servers() {
   const renderAPI = () => (
     <div className="server-section">
       <h2>Complete CRUD RESTful API</h2>
+      
+      <div className="tech-stack">
+        <h4>Technology Stack:</h4>
+        <div className="tech-tags">
+          <span className="tech-tag javascript"><SiJavascript className="tech-icon" />JavaScript</span>
+          <span className="tech-tag nodejs"><SiNodedotjs className="tech-icon" />Node.js</span>
+          <span className="tech-tag express"><SiExpress className="tech-icon" />Express</span>
+          <span className="tech-tag postgresql"><SiPostgresql className="tech-icon" />PostgreSQL</span>
+          <span className="tech-tag jest"><SiJest className="tech-icon" />Jest</span>
+          <span className="tech-tag server"><FaServer className="tech-icon" />RESTful API</span>
+        </div>
+      </div>
+      
       <p>
         This project was built using JavaScript to run on Node.js, using
         Express as the endpoint, and PostgreSQL for the database. Jest was
@@ -91,6 +106,19 @@ export default function Servers() {
   const renderTeamBackend = () => (
     <div className="server-section">
       <h2>Find n' Dine Backend (Team Project)</h2>
+      
+      <div className="tech-stack">
+        <h4>Technology Stack:</h4>
+        <div className="tech-tags">
+          <span className="tech-tag javascript"><SiJavascript className="tech-icon" />JavaScript</span>
+          <span className="tech-tag nodejs"><SiNodedotjs className="tech-icon" />Node.js</span>
+          <span className="tech-tag express"><SiExpress className="tech-icon" />Express</span>
+          <span className="tech-tag postgresql"><SiPostgresql className="tech-icon" />PostgreSQL</span>
+          <span className="tech-tag jest"><SiJest className="tech-icon" />Jest</span>
+          <span className="tech-tag server"><FaServer className="tech-icon" />Team Backend</span>
+        </div>
+      </div>
+      
       <p>
         This was the backend component of our <strong>team project</strong> "Find n' Dine", 
         a five-day collaborative project that tested our project management skills 

@@ -1,5 +1,7 @@
 import '../styling/Firmware.css';
 import { useState } from 'react';
+import { SiRust, SiC } from 'react-icons/si';
+import { FaMicrochip } from 'react-icons/fa';
 
 export default function Firmware() {
     const [activeTab, setActiveTab] = useState('rust');
@@ -55,8 +57,8 @@ loop {
                 <div className="tech-stack">
                     <h4>Technology Stack:</h4>
                     <div className="tech-tags">
-                        <span className="tech-tag">Rust</span>
-                        <span className="tech-tag">STM32F4</span>
+                        <span className="tech-tag rust"><SiRust className="tech-icon" />Rust</span>
+                        <span className="tech-tag microcontroller"><FaMicrochip className="tech-icon" />STM32F4</span>
                         <span className="tech-tag">Embedded HAL</span>
                         <span className="tech-tag">Cortex-M</span>
                         <span className="tech-tag">probe-rs</span>
@@ -168,7 +170,7 @@ void test_passing(void) {
                 <div className="tech-stack">
                     <h4>Technology Stack:</h4>
                     <div className="tech-tags">
-                        <span className="tech-tag">C</span>
+                        <span className="tech-tag c-lang"><SiC className="tech-icon" />C</span>
                         <span className="tech-tag">Unity Framework</span>
                         <span className="tech-tag">GCC</span>
                         <span className="tech-tag">Make</span>
