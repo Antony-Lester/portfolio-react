@@ -1,38 +1,242 @@
 import '../styling/Firmware.css';
+import { useState } from 'react';
 
 export default function Firmware() {
-    return (
-        <div className='main scroll'>
-            <div className='firmware-header'>
-                <h2>Firmware Projects</h2>
-                <p>Embedded systems and firmware development</p>
-            </div>
+    const [activeTab, setActiveTab] = useState('rust');
+
+    const renderRustProjects = () => (
+        <div className="firmware-section">
+            <h2>Rust Embedded Programming</h2>
             
-            <div className='firmware-content'>
-                <div className='firmware-section'>
-                    <h3>Microcontroller Programming</h3>
-                    <p>Experience with various microcontrollers and embedded systems programming.</p>
-                </div>
+            {/* Rust Blinky Project */}
+            <div className="project-card">
+                <h3>STM32 LED Blinky (Rust)</h3>
+                <p>
+                    Embedded Rust application for STM32F4 microcontroller that controls two LEDs 
+                    in an alternating blink pattern. This project demonstrates low-level hardware 
+                    control using Rust's memory safety features in embedded systems.
+                </p>
                 
-                <div className='firmware-section'>
-                    <h3>IoT Development</h3>
-                    <p>Internet of Things projects and wireless communication protocols.</p>
+                <div className="features-list">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>STM32F4 microcontroller programming</li>
+                        <li>GPIO control and LED manipulation</li>
+                        <li>48MHz system clock configuration</li>
+                        <li>SysTick timer-based delays</li>
+                        <li>Memory-safe embedded Rust code</li>
+                        <li>probe-rs debugging and flashing</li>
+                    </ul>
                 </div>
-                
-                <div className='firmware-section'>
-                    <h3>Real-time Systems</h3>
-                    <p>Development of real-time embedded applications and system optimization.</p>
+
+                <div className="code-snippet">
+                    <h4>Core Implementation:</h4>
+                    <pre><code>{`// Set up GPIO pins for LEDs
+let gpioa = dp.GPIOA.split();
+let mut led1 = gpioa.pa6.into_push_pull_output();
+let mut led2 = gpioa.pa7.into_push_pull_output();
+
+// Configure system clock to 48MHz
+let rcc = dp.RCC.constrain();
+let clocks = rcc.cfgr.sysclk(48.MHz()).freeze();
+
+// Create delay abstraction
+let mut delay = cp.SYST.delay(&clocks);
+
+loop {
+    led1.set_high(); led2.set_low();
+    delay.delay_ms(1000_u32);
+    
+    led1.set_low(); led2.set_high();
+    delay.delay_ms(1000_u32);
+}`}</code></pre>
                 </div>
-                
-                <div className='coming-soon'>
-                    <div className='coming-soon-content'>
-                        <svg className='gear-icon' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 15.5A3.5 3.5 0 0 1 8.5 12A3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97L2.46 14.6c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.31.61.22l2.49-1c.52.39 1.06.73 1.69.98l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.25 1.17-.59 1.69-.98l2.49 1c.22.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66Z" fill="currentColor"/>
-                        </svg>
-                        <h3>Projects Coming Soon</h3>
-                        <p>Firmware and embedded systems projects will be showcased here.</p>
+
+                <div className="tech-stack">
+                    <h4>Technology Stack:</h4>
+                    <div className="tech-tags">
+                        <span className="tech-tag">Rust</span>
+                        <span className="tech-tag">STM32F4</span>
+                        <span className="tech-tag">Embedded HAL</span>
+                        <span className="tech-tag">Cortex-M</span>
+                        <span className="tech-tag">probe-rs</span>
+                        <span className="tech-tag">no_std</span>
                     </div>
                 </div>
+
+                <a
+                    href='https://github.com/Antony-Lester/rust-blinky'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className="repo-link"
+                >
+                    🦀 Rust Blinky Repository
+                </a>
+            </div>
+
+            {/* Rust Hello World */}
+            <div className="project-card">
+                <h3>Rust Hello World</h3>
+                <p>
+                    Foundation Rust programming project demonstrating basic Rust syntax, 
+                    ownership principles, and development workflow setup.
+                </p>
+                
+                <div className="features-list">
+                    <h4>Learning Objectives:</h4>
+                    <ul>
+                        <li>Rust toolchain setup and configuration</li>
+                        <li>Basic Rust syntax and ownership model</li>
+                        <li>Cargo build system fundamentals</li>
+                        <li>Memory safety without garbage collection</li>
+                    </ul>
+                </div>
+
+                <a
+                    href='https://github.com/Antony-Lester/rust_hello_world'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className="repo-link"
+                >
+                    🦀 Rust Hello World Repository
+                </a>
+            </div>
+        </div>
+    );
+
+    const renderCProjects = () => (
+        <div className="firmware-section">
+            <h2>C Systems Programming</h2>
+            
+            <div className="project-card">
+                <h3>C Test-Driven Development (Unity)</h3>
+                <p>
+                    Professional C development project implementing Test-Driven Development (TDD) 
+                    using the Unity testing framework. Demonstrates industry best practices for 
+                    embedded C programming with comprehensive testing infrastructure.
+                </p>
+                
+                <div className="features-list">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Unity testing framework integration</li>
+                        <li>Automated test runner generation</li>
+                        <li>Makefile-based build system</li>
+                        <li>Modular C architecture</li>
+                        <li>Header file organization</li>
+                        <li>Conditional compilation for testing</li>
+                    </ul>
+                </div>
+
+                <div className="code-snippet">
+                    <h4>Core Implementation:</h4>
+                    <pre><code>{`// main.c - Production code
+#include <stdio.h>
+#include "stdout.h"
+
+#ifndef RUN_TEST 
+int main() {
+    print_hello();
+    return 0;
+}
+#endif
+
+// stdout.c - Module implementation
+void print_hello(void) {
+    printf("Hello, Embedded World!\\n");
+}`}</code></pre>
+                </div>
+
+                <div className="code-snippet">
+                    <h4>Test Implementation:</h4>
+                    <pre><code>{`// test_pass.c - Unity test
+#include "unity.h"
+
+void setUp(void) {
+    // Setup code here
+}
+
+void tearDown(void) {
+    // Teardown code here
+}
+
+void test_passing(void) {
+    TEST_ASSERT_EQUAL(1, 1);
+}`}</code></pre>
+                </div>
+
+                <div className="tech-stack">
+                    <h4>Technology Stack:</h4>
+                    <div className="tech-tags">
+                        <span className="tech-tag">C</span>
+                        <span className="tech-tag">Unity Framework</span>
+                        <span className="tech-tag">GCC</span>
+                        <span className="tech-tag">Make</span>
+                        <span className="tech-tag">TDD</span>
+                        <span className="tech-tag">Ruby</span>
+                    </div>
+                </div>
+
+                <div className="build-instructions">
+                    <h4>Build Process:</h4>
+                    <pre><code>{`# Generate test runner
+ruby lib/test/Unity/auto/generate_test_runner.rb tests/test_pass.c
+
+# Compile with Unity
+gcc -o test_pass_runner tests/test_pass_Runner.c tests/test_pass.c \\
+    lib/test/Unity/src/unity.c -Ilib/test/Unity/src -DRUN_TESTS
+
+# Execute tests
+./test_pass_runner`}</code></pre>
+                </div>
+
+                <a
+                    href='https://github.com/Antony-Lester/C-HelloWorld'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className="repo-link"
+                >
+                    🔧 C TDD Project Repository
+                </a>
+            </div>
+        </div>
+    );
+
+    return (
+        <div 
+            className='main' 
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'auto',
+                height: '100vh',
+                paddingBottom: '75%',
+                color: '#4B4B4B',
+            }}
+        >
+            <div className="firmware-header">
+                <h1>Systems Programming</h1>
+                <p>Embedded systems, firmware development, and low-level programming</p>
+            </div>
+            
+            <div className="firmware-navigation">
+                <button 
+                    className={`nav-button ${activeTab === 'rust' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('rust')}
+                >
+                    🦀 Rust Projects
+                </button>
+                <button 
+                    className={`nav-button ${activeTab === 'c' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('c')}
+                >
+                    🔧 C Projects
+                </button>
+            </div>
+
+            <div className="firmware-content">
+                {activeTab === 'rust' && renderRustProjects()}
+                {activeTab === 'c' && renderCProjects()}
             </div>
         </div>
     );

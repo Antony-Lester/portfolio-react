@@ -1,8 +1,15 @@
-/* Firmware Page Styling - Material Design 3 */
+/* Systems Programming Page Styling - Material Design 3 */
 
 .firmware-header {
     margin-bottom: 32px;
     text-align: center;
+}
+
+.firmware-header h1 {
+    color: var(--md-sys-color-on-surface);
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0 0 8px 0;
 }
 
 .firmware-header h2 {
@@ -19,6 +26,41 @@
     opacity: 0.8;
 }
 
+/* Navigation Tabs */
+.firmware-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    padding: 0 16px;
+}
+
+.nav-button {
+    background: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface-variant);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 20px;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+}
+
+.nav-button:hover {
+    background: var(--md-sys-color-surface-container-highest);
+    border-color: var(--md-sys-color-outline);
+    transform: translateY(-1px);
+}
+
+.nav-button.active {
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-color: var(--md-sys-color-primary);
+    font-weight: 600;
+}
+
 .firmware-content {
     display: flex;
     flex-direction: column;
@@ -30,10 +72,27 @@
     border-radius: 16px;
     padding: 24px;
     border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.firmware-section h2 {
+    color: var(--md-sys-color-primary);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+/* Project Cards */
+.project-card {
+    background: var(--md-sys-color-surface-container);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid var(--md-sys-color-outline-variant);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.firmware-section:hover {
+.project-card:hover {
     transform: translateY(-2px);
     box-shadow: 
         0 4px 8px 0 rgba(0, 0, 0, 0.1),
@@ -41,75 +100,193 @@
     border-color: var(--md-sys-color-outline);
 }
 
-.firmware-section h3 {
+.project-card h3 {
     color: var(--md-sys-color-primary);
     font-size: 1.25rem;
     font-weight: 500;
     margin: 0 0 12px 0;
 }
 
-.firmware-section p {
+.project-card p {
     color: var(--md-sys-color-on-surface);
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+
+/* Features List */
+.features-list {
+    margin: 20px 0;
+}
+
+.features-list h4 {
+    color: var(--md-sys-color-on-surface);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+}
+
+.features-list ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
-.coming-soon {
-    background: var(--md-sys-color-primary-container);
-    border-radius: 16px;
-    padding: 40px 24px;
-    text-align: center;
+.features-list li {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.features-list li::before {
+    content: "→";
+    color: var(--md-sys-color-primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Code Snippets */
+.code-snippet {
+    margin: 20px 0;
+}
+
+.code-snippet h4 {
+    color: var(--md-sys-color-on-surface);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+}
+
+.code-snippet pre {
+    background: var(--md-sys-color-surface-container-low);
     border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.code-snippet code {
+    color: var(--md-sys-color-on-surface);
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Technology Stack */
+.tech-stack {
+    margin: 20px 0;
+}
+
+.tech-stack h4 {
+    color: var(--md-sys-color-on-surface);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+/* Build Instructions */
+.build-instructions {
+    margin: 20px 0;
+}
+
+.build-instructions h4 {
+    color: var(--md-sys-color-on-surface);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+}
+
+.build-instructions pre {
+    background: var(--md-sys-color-surface-container-low);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.build-instructions code {
+    color: var(--md-sys-color-on-surface);
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Repository Links */
+.repo-link {
+    display: inline-block;
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: 16px;
 }
 
-.coming-soon-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-}
-
-.gear-icon {
-    width: 64px;
-    height: 64px;
-    color: var(--md-sys-color-primary);
-    animation: rotate 4s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.coming-soon h3 {
+.repo-link:hover {
+    background: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin: 0;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.coming-soon p {
-    color: var(--md-sys-color-on-primary-container);
-    font-size: 1rem;
-    margin: 0;
-    opacity: 0.8;
-    max-width: 400px;
+/* Mobile Responsiveness */
+@media (max-width: 599px) {
+    .firmware-navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-button {
+        width: 200px;
+        text-align: center;
+    }
+    
+    .project-card {
+        padding: 16px;
+    }
+    
+    .code-snippet pre {
+        font-size: 0.75rem;
+        overflow-x: auto;
+    }
+    
+    .tech-tags {
+        justify-content: center;
+    }
 }
 
 /* Tablet and up */
 @media (min-width: 600px) {
     .firmware-header {
-        text-align: left;
         margin-bottom: 40px;
     }
     
-    .firmware-header h2 {
+    .firmware-header h1 {
         font-size: 2.25rem;
     }
     
@@ -121,38 +298,23 @@
         gap: 32px;
     }
     
-    .firmware-section {
+    .project-card {
         padding: 32px;
     }
     
-    .firmware-section h3 {
-        font-size: 1.5rem;
-    }
-    
-    .firmware-section p {
-        font-size: 1rem;
-    }
-    
-    .coming-soon {
-        padding: 48px 32px;
-    }
-    
-    .gear-icon {
-        width: 80px;
-        height: 80px;
+    .firmware-section h2 {
+        font-size: 1.75rem;
     }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
-    .firmware-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 24px;
+    .firmware-navigation {
+        gap: 16px;
     }
     
-    .coming-soon {
-        grid-column: 1 / -1;
-        margin-top: 24px;
+    .nav-button {
+        padding: 14px 32px;
+        font-size: 1rem;
     }
 }
