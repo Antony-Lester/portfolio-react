@@ -4,13 +4,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './header';
 import Certs from './Certs';
-import Linkin from './Linkin';
-import Converter from './Converter';
 import Calculator from './Calculator';
-import Team from './Team'
-import DateApp from './Date'
+import Apps from './Apps'
 import Servers from './Servers';
-import Website from './Website';
+import Websites from './Websites';
+import Firmware from './Firmware';
 
 function App() {
   return (
@@ -20,13 +18,11 @@ function App() {
         <Routes>
           <Route key='root' path='/' element={<></>} />
           <Route key='certs' path='/certs' element={<Certs />} />
-          <Route key='linkedin' path='/linkedin' element={<Linkin />} />
-          <Route key='converter' path='/converter' element={<Converter />} />
           <Route key='calculator' path='/calculator' element={<Calculator />} />
-          <Route key='team' path='/find-n-dine' element={<Team />} />
-          <Route key='date' path='/dating-app' element={<DateApp />} />
+          <Route key='date' path='/dating-app' element={<Apps />} />
           <Route key='servers' path='/servers' element={<Servers />} />
-          <Route key='website' path='/website' element={<Website />} />
+          <Route key='firmware' path='/firmware' element={<Firmware />} />
+          <Route key='website' path='/website' element={<Websites />} />
         </Routes>
       </BrowserRouter>
     </div>

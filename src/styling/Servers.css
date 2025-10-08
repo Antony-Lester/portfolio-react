@@ -1,32 +1,34 @@
-/* Apps Page Styling - Material Design 3 */
+/* Servers Page Styling - Material Design 3 */
 
-.apps-header {
+.servers-header {
     margin-bottom: 32px;
     text-align: center;
 }
 
-.apps-header h1 {
+.servers-header h1 {
     color: var(--md-sys-color-on-surface);
     font-size: 1.75rem;
     font-weight: 500;
     margin: 0 0 8px 0;
 }
 
-.apps-header p {
+.servers-header p {
     color: var(--md-sys-color-on-surface-variant);
     font-size: 1rem;
     margin: 0;
     opacity: 0.8;
 }
 
-.apps-navigation {
+.servers-navigation {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 32px;
     padding: 8px;
     background: var(--md-sys-color-surface-container-low);
     border-radius: 12px;
-    overflow-x: auto;
+    min-height: 56px;
+    align-items: center;
 }
 
 .nav-button {
@@ -34,13 +36,17 @@
     color: var(--md-sys-color-on-surface);
     border: 1px solid var(--md-sys-color-outline-variant);
     border-radius: 8px;
-    padding: 12px 20px;
+    padding: 14px 20px;
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
     min-width: fit-content;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-button:hover {
@@ -54,39 +60,39 @@
     border-color: var(--md-sys-color-primary);
 }
 
-.apps-content {
+.servers-content {
     flex: 1;
 }
 
-.app-section {
+.server-section {
     background: var(--md-sys-color-surface-container-highest);
     border-radius: 16px;
     padding: 24px;
     border: 1px solid var(--md-sys-color-outline-variant);
 }
 
-.app-section h2 {
+.server-section h2 {
     color: var(--md-sys-color-primary);
     font-size: 1.25rem;
     font-weight: 500;
     margin: 0 0 16px 0;
 }
 
-.app-section h3 {
+.server-section h3 {
     color: var(--md-sys-color-on-surface);
     font-size: 1.1rem;
     font-weight: 500;
-    margin: 0 0 12px 0;
+    margin: 24px 0 12px 0;
 }
 
-.app-section p {
+.server-section p {
     color: var(--md-sys-color-on-surface);
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0 0 16px 0;
 }
 
-.app-section p:last-of-type {
+.server-section p:last-of-type {
     margin-bottom: 24px;
 }
 
@@ -115,34 +121,29 @@
     margin: 16px 0;
 }
 
-.team-header {
-    text-align: center;
-    margin-bottom: 24px;
-}
-
-.northcoders-logo {
-    height: 60px;
-    margin-bottom: 16px;
-}
-
-.team-description {
-    margin-bottom: 24px;
-}
-
-.video-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 24px 0;
-    background: var(--md-sys-color-surface-container);
+.features-list {
+    background: var(--md-sys-color-surface-container-low);
     border-radius: 12px;
-    overflow: hidden;
+    padding: 20px;
+    margin: 24px 0;
     border: 1px solid var(--md-sys-color-outline-variant);
 }
 
-.video-container iframe {
-    width: 100%;
-    height: 250px;
-    border: none;
+.features-list h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: var(--md-sys-color-primary);
+}
+
+.features-list ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--md-sys-color-on-surface);
+}
+
+.features-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
 }
 
 /* Mobile-first Image Gallery */
@@ -175,6 +176,12 @@
     max-height: 300px;
     object-fit: contain;
     background: var(--md-sys-color-surface);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.image-item img:hover {
+    transform: scale(1.02);
 }
 
 .image-item p {
@@ -187,53 +194,105 @@
     background: var(--md-sys-color-surface-container-low);
 }
 
+/* Fullscreen Modal */
+.fullscreen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+.fullscreen-content {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: default;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close-button:hover {
+    background: var(--md-sys-color-error);
+    transform: scale(1.1);
+}
+
 /* Tablet and up */
 @media (min-width: 600px) {
-    .apps-header {
+    .servers-header {
         text-align: left;
         margin-bottom: 40px;
     }
     
-    .apps-header h1 {
+    .servers-header h1 {
         font-size: 2.25rem;
     }
     
-    .apps-header p {
+    .servers-header p {
         font-size: 1.125rem;
     }
     
-    .apps-navigation {
+    .servers-navigation {
         justify-content: flex-start;
         margin-bottom: 40px;
+        min-height: 64px;
     }
     
     .nav-button {
-        padding: 14px 24px;
+        padding: 16px 24px;
         font-size: 1rem;
+        min-height: 48px;
     }
     
-    .app-section {
+    .server-section {
         padding: 32px;
     }
     
-    .app-section h2 {
+    .server-section h2 {
         font-size: 1.5rem;
     }
     
-    .app-section h3 {
+    .server-section h3 {
         font-size: 1.3rem;
     }
     
-    .app-section p {
+    .server-section p {
         font-size: 1rem;
-    }
-    
-    .northcoders-logo {
-        height: 80px;
-    }
-    
-    .video-container iframe {
-        height: 350px;
     }
     
     .image-gallery {
@@ -248,10 +307,6 @@
 
 /* Desktop */
 @media (min-width: 1024px) {
-    .video-container iframe {
-        height: 450px;
-    }
-    
     .image-gallery {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 24px;

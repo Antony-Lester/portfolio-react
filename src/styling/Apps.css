@@ -21,12 +21,14 @@
 
 .apps-navigation {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 32px;
     padding: 8px;
     background: var(--md-sys-color-surface-container-low);
     border-radius: 12px;
-    overflow-x: auto;
+    min-height: 56px;
+    align-items: center;
 }
 
 .nav-button {
@@ -34,13 +36,17 @@
     color: var(--md-sys-color-on-surface);
     border: 1px solid var(--md-sys-color-outline-variant);
     border-radius: 8px;
-    padding: 12px 20px;
+    padding: 14px 20px;
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
     min-width: fit-content;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-button:hover {
@@ -175,6 +181,12 @@
     max-height: 300px;
     object-fit: contain;
     background: var(--md-sys-color-surface);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.image-item img:hover {
+    transform: scale(1.02);
 }
 
 .image-item p {
@@ -185,6 +197,64 @@
     font-weight: 500;
     color: var(--md-sys-color-on-surface);
     background: var(--md-sys-color-surface-container-low);
+}
+
+/* Fullscreen Modal */
+.fullscreen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+.fullscreen-content {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: default;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close-button:hover {
+    background: var(--md-sys-color-error);
+    transform: scale(1.1);
 }
 
 /* Tablet and up */
@@ -205,11 +275,13 @@
     .apps-navigation {
         justify-content: flex-start;
         margin-bottom: 40px;
+        min-height: 64px;
     }
     
     .nav-button {
-        padding: 14px 24px;
+        padding: 16px 24px;
         font-size: 1rem;
+        min-height: 48px;
     }
     
     .app-section {

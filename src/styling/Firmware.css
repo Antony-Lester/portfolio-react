@@ -1,0 +1,158 @@
+/* Firmware Page Styling - Material Design 3 */
+
+.firmware-header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.firmware-header h2 {
+    color: var(--md-sys-color-on-surface);
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+}
+
+.firmware-header p {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.firmware-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.firmware-section {
+    background: var(--md-sys-color-surface-container-highest);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.firmware-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 8px 0 rgba(0, 0, 0, 0.1),
+        0 6px 20px 4px rgba(0, 0, 0, 0.15);
+    border-color: var(--md-sys-color-outline);
+}
+
+.firmware-section h3 {
+    color: var(--md-sys-color-primary);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+}
+
+.firmware-section p {
+    color: var(--md-sys-color-on-surface);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.coming-soon {
+    background: var(--md-sys-color-primary-container);
+    border-radius: 16px;
+    padding: 40px 24px;
+    text-align: center;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    margin-top: 16px;
+}
+
+.coming-soon-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.gear-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--md-sys-color-primary);
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.coming-soon h3 {
+    color: var(--md-sys-color-on-primary-container);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.coming-soon p {
+    color: var(--md-sys-color-on-primary-container);
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.8;
+    max-width: 400px;
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+    .firmware-header {
+        text-align: left;
+        margin-bottom: 40px;
+    }
+    
+    .firmware-header h2 {
+        font-size: 2.25rem;
+    }
+    
+    .firmware-header p {
+        font-size: 1.125rem;
+    }
+    
+    .firmware-content {
+        gap: 32px;
+    }
+    
+    .firmware-section {
+        padding: 32px;
+    }
+    
+    .firmware-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .firmware-section p {
+        font-size: 1rem;
+    }
+    
+    .coming-soon {
+        padding: 48px 32px;
+    }
+    
+    .gear-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .firmware-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+    }
+    
+    .coming-soon {
+        grid-column: 1 / -1;
+        margin-top: 24px;
+    }
+}

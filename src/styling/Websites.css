@@ -1,0 +1,378 @@
+/* Websites Page Styling - Material Design 3 */
+
+.websites-header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.websites-header h2 {
+    color: var(--md-sys-color-on-surface);
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+}
+
+.websites-header p {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.websites-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+    padding: 8px;
+    background: var(--md-sys-color-surface-container-low);
+    border-radius: 12px;
+    min-height: 56px;
+    align-items: center;
+}
+
+.nav-button {
+    background: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    min-width: fit-content;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-button:hover {
+    background: var(--md-sys-color-surface-container-high);
+    border-color: var(--md-sys-color-outline);
+}
+
+.nav-button.active {
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border-color: var(--md-sys-color-primary);
+}
+
+.websites-content {
+    flex: 1;
+}
+
+.website-section {
+    background: var(--md-sys-color-surface-container-highest);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.website-section h3 {
+    color: var(--md-sys-color-primary);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 0 16px 0;
+}
+
+.website-section p {
+    color: var(--md-sys-color-on-surface);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+
+.website-section p:last-of-type {
+    margin-bottom: 24px;
+}
+
+.website-section a {
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.website-section a:hover {
+    text-decoration: underline;
+}
+
+.website-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.website-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--md-sys-color-primary-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--md-sys-color-on-primary-container);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.website-link:hover {
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 8px 0 rgba(0, 0, 0, 0.1),
+        0 6px 20px 4px rgba(0, 0, 0, 0.15);
+}
+
+.link-icon {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--md-sys-color-surface-container);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.website-link:hover .link-icon {
+    background: var(--md-sys-color-surface-container-high);
+}
+
+.website-link div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.website-link strong {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.website-link small {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.website-container {
+    width: 100%;
+    height: 500px;
+    background: var(--md-sys-color-surface-container);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    margin-top: 16px;
+}
+
+.calculator-embed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    padding: 24px;
+    background: var(--md-sys-color-surface-container-low);
+    border-radius: 12px;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    position: relative;
+    overflow: visible;
+    min-height: 600px;
+    width: 100%;
+}
+
+.calculator-embed > div {
+    position: relative !important;
+    transform: scale(0.75) !important;
+    transform-origin: center !important;
+    top: auto !important;
+    left: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+}
+
+/* Override calculator wrapper positioning when embedded */
+.calculator-embed .wrapper {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    z-index: auto !important;
+}
+
+/* Mobile-first: Hide handwritten notes on very small screens */
+.calculator-embed #background {
+    display: none !important;
+}
+
+/* Show notes on larger mobile screens (480px+) */
+@media (min-width: 480px) {
+    .calculator-embed #background {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        right: auto !important;
+        width: 150px !important;
+        height: 300px !important;
+        transform: translate(-200px, -50%) !important;
+        overflow: visible !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-end !important;
+        padding-right: 10px !important;
+    }
+    
+    .calculator-embed .backgroundBox,
+    .calculator-embed .latest {
+        display: block !important;
+        visibility: visible !important;
+        width: auto !important;
+        height: auto !important;
+        font-size: 0.9rem !important;
+        margin: 6px 0 !important;
+    }
+    
+    .calculator-embed .latest {
+        font-size: 1rem !important;
+    }
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+    .websites-header {
+        text-align: left;
+        margin-bottom: 40px;
+    }
+    
+    .websites-header h2 {
+        font-size: 2.25rem;
+    }
+    
+    .websites-header p {
+        font-size: 1.125rem;
+    }
+    
+    .websites-navigation {
+        justify-content: flex-start;
+        margin-bottom: 40px;
+        min-height: 64px;
+    }
+    
+    .nav-button {
+        padding: 16px 24px;
+        font-size: 1rem;
+        min-height: 48px;
+    }
+    
+    .website-section {
+        padding: 32px;
+    }
+    
+    .website-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .website-section p {
+        font-size: 1rem;
+    }
+    
+    .website-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .website-link {
+        flex: 1;
+        min-width: 280px;
+    }
+    
+    .calculator-embed {
+        min-height: 650px;
+        padding: 32px;
+    }
+    
+    .calculator-embed > div {
+        transform: scale(0.8) !important;
+    }
+    
+    .calculator-embed #background {
+        width: 180px !important;
+        height: 350px !important;
+        transform: translate(-230px, -50%) !important;
+        padding-right: 15px !important;
+    }
+    
+    .calculator-embed .backgroundBox,
+    .calculator-embed .latest {
+        font-size: 1.1rem !important;
+        margin: 8px 0 !important;
+    }
+    
+    .calculator-embed .latest {
+        font-size: 1.3rem !important;
+    }
+    
+    .website-container {
+        height: 600px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .calculator-embed {
+        min-height: 700px;
+        padding: 40px;
+    }
+    
+    .calculator-embed > div {
+        transform: scale(0.9) !important;
+    }
+    
+    .calculator-embed #background {
+        width: 220px !important;
+        height: 400px !important;
+        transform: translate(-280px, -50%) !important;
+        padding-right: 20px !important;
+    }
+    
+    .calculator-embed .backgroundBox,
+    .calculator-embed .latest {
+        font-size: 1.3rem !important;
+        margin: 10px 0 !important;
+    }
+    
+    .calculator-embed .latest {
+        font-size: 1.5rem !important;
+    }
+    
+    .website-container {
+        height: 700px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .calculator-embed > div {
+        transform: scale(1) !important;
+    }
+    
+    .calculator-embed #background {
+        width: 250px !important;
+        height: 450px !important;
+        transform: translate(-320px, -50%) !important;
+    }
+    
+    .calculator-embed .backgroundBox,
+    .calculator-embed .latest {
+        font-size: 1.4rem !important;
+    }
+    
+    .calculator-embed .latest {
+        font-size: 1.6rem !important;
+    }
+}

@@ -25,6 +25,15 @@
     margin: 0 auto;
     overflow: hidden;
     width: 100%;
+    gap: 16px;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .logo {
@@ -47,9 +56,11 @@
     display: none;
     gap: 4px;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: center;
     overflow: hidden;
     white-space: nowrap;
+    flex: 1;
+    max-width: 600px;
 }
 
 .nav-item {
@@ -97,6 +108,30 @@
     .desktop-nav {
         gap: 2px;
     }
+    
+    .linkedin-icon-button {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .linkedin-icon-button svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Mobile screens - smaller LinkedIn button */
+@media (max-width: 900px) {
+    .linkedin-icon-button {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+    }
+    
+    .linkedin-icon-button svg {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 /* Large screens - show icons and text */
@@ -115,6 +150,16 @@
         width: 20px;
         height: 20px;
     }
+    
+    .linkedin-icon-button {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .linkedin-icon-button svg {
+        width: 22px;
+        height: 22px;
+    }
 }
 
 /* Extra large screens */
@@ -131,6 +176,16 @@
     
     .desktop-nav {
         gap: 8px;
+    }
+    
+    .linkedin-icon-button {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .linkedin-icon-button svg {
+        width: 24px;
+        height: 24px;
     }
 }
 
@@ -150,6 +205,45 @@
 
 .nav-item.active img {
     filter: brightness(0) saturate(100%) invert(13%) sepia(55%) saturate(6613%) hue-rotate(262deg) brightness(97%) contrast(101%);
+}
+
+/* LinkedIn Square Icon Button */
+.linkedin-icon-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background: #0077B5; /* LinkedIn blue */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(0, 119, 181, 0.2);
+}
+
+.linkedin-icon-button svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.linkedin-icon-button:hover {
+    background: #005582; /* Darker LinkedIn blue */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+}
+
+.linkedin-icon-button:active {
+    transform: translateY(0);
+    background: #004471; /* Even darker blue */
+}
+
+/* Hide mobile LinkedIn button since we show it in header */
+.mobile-linkedin-icon-button {
+    display: none;
 }
 
 /* Mobile Menu Button */

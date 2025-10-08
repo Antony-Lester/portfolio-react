@@ -1,5 +1,5 @@
-import '../styling/Date.css'
-import { useState } from 'react'
+import '../styling/Apps.css'
+import { useState, useEffect } from 'react'
 import login from '../images/dating/amore_login.png'
 import mvp from '../images/dating/mvp.png'
 import swipe1 from '../images/dating/swipe1.png'
@@ -11,8 +11,29 @@ import strengths from '../images/team/strengths.png'
 import vision from '../images/team/vision.png'
 import frontend from '../images/team/frontend.png'
 
-export default function DateApp() {
+export default function Apps() {
   const [activeTab, setActiveTab] = useState('dating')
+  const [fullscreenImage, setFullscreenImage] = useState(null)
+
+  const openFullscreen = (imageSrc, imageAlt) => {
+    setFullscreenImage({ src: imageSrc, alt: imageAlt })
+  }
+
+  const closeFullscreen = () => {
+    setFullscreenImage(null)
+  }
+
+  // Handle Escape key to close fullscreen
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape' && fullscreenImage) {
+        closeFullscreen()
+      }
+    }
+
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [fullscreenImage])
 
   const renderDatingApp = () => (
     <div className="app-section">
@@ -54,19 +75,39 @@ export default function DateApp() {
 
       <div className="image-gallery">
         <div className="image-item">
-          <img src={login} alt="Dating app login screen" />
+          <img 
+            src={login} 
+            alt="Dating app login screen" 
+            onClick={() => openFullscreen(login, "Dating app login screen")}
+            style={{ cursor: 'pointer' }}
+          />
           <p>Login Screen</p>
         </div>
         <div className="image-item">
-          <img src={mvp} alt="Dating app MVP features" />
+          <img 
+            src={mvp} 
+            alt="Dating app MVP features" 
+            onClick={() => openFullscreen(mvp, "Dating app MVP features")}
+            style={{ cursor: 'pointer' }}
+          />
           <p>MVP Features</p>
         </div>
         <div className="image-item">
-          <img src={swipe1} alt="Dating app swipe interface 1" />
+          <img 
+            src={swipe1} 
+            alt="Dating app swipe interface 1" 
+            onClick={() => openFullscreen(swipe1, "Dating app swipe interface 1")}
+            style={{ cursor: 'pointer' }}
+          />
           <p>Swipe Interface</p>
         </div>
         <div className="image-item">
-          <img src={swipe2} alt="Dating app swipe interface 2" />
+          <img 
+            src={swipe2} 
+            alt="Dating app swipe interface 2" 
+            onClick={() => openFullscreen(swipe2, "Dating app swipe interface 2")}
+            style={{ cursor: 'pointer' }}
+          />
           <p>Match Interface</p>
         </div>
       </div>
@@ -111,23 +152,48 @@ export default function DateApp() {
 
       <div className="image-gallery">
         <div className="image-item">
-          <img src={main} alt="Find n' Dine main app interface" />
+          <img 
+            src={main} 
+            alt="Find n' Dine main app interface" 
+            onClick={() => openFullscreen(main, "Find n' Dine main app interface")}
+            style={{ cursor: 'pointer' }}
+          />
           <p>Main App Interface</p>
         </div>
         <div className="image-item">
-          <img src={team} alt="Team project overview" />
+          <img 
+            src={team} 
+            alt="Team project overview" 
+            onClick={() => openFullscreen(team, "Team project overview")}
+            style={{ cursor: 'pointer' }}
+          />
           <p>Team Project Overview</p>
         </div>
         <div className="image-item">
-          <img src={strengths} alt="Team strengths analysis" />
+          <img 
+            src={strengths} 
+            alt="Team strengths analysis" 
+            onClick={() => openFullscreen(strengths, "Team strengths analysis")}
+            style={{ cursor: 'pointer' }}
+          />
           <p>Team Strengths</p>
         </div>
         <div className="image-item">
-          <img src={vision} alt="Project vision and goals" />
+          <img 
+            src={vision} 
+            alt="Project vision and goals" 
+            onClick={() => openFullscreen(vision, "Project vision and goals")}
+            style={{ cursor: 'pointer' }}
+          />
           <p>Project Vision</p>
         </div>
         <div className="image-item">
-          <img src={frontend} alt="Frontend architecture diagram" />
+          <img 
+            src={frontend} 
+            alt="Frontend architecture diagram" 
+            onClick={() => openFullscreen(frontend, "Frontend architecture diagram")}
+            style={{ cursor: 'pointer' }}
+          />
           <p>Frontend Architecture</p>
         </div>
       </div>
@@ -178,6 +244,22 @@ export default function DateApp() {
         {activeTab === 'dating' && renderDatingApp()}
         {activeTab === 'team' && renderTeamProject()}
       </div>
+
+      {/* Fullscreen Image Modal */}
+      {fullscreenImage && (
+        <div className="fullscreen-modal" onClick={closeFullscreen}>
+          <div className="fullscreen-content">
+            <img 
+              src={fullscreenImage.src} 
+              alt={fullscreenImage.alt}
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button className="close-button" onClick={closeFullscreen}>
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
