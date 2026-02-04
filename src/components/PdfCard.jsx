@@ -11,11 +11,17 @@ const PdfCard = ({ cert, onClick }) => {
             try {
                 setLoading(true);
                 setError(false);
-                const thumbnailUrl = await getPdfThumbnail(cert.src);
-                if (thumbnailUrl) {
-                    setThumbnail(thumbnailUrl);
+                
+                // Use custom thumbnail if available, otherwise generate from PDF
+                if (cert.customThumbnail) {
+                    setThumbnail(cert.customThumbnail);
                 } else {
-                    setError(true);
+                    const thumbnailUrl = await getPdfThumbnail(cert.src);
+                    if (thumbnailUrl) {
+                        setThumbnail(thumbnailUrl);
+                    } else {
+                        setError(true);
+                    }
                 }
             } catch (err) {
                 console.error('Error loading PDF thumbnail:', err);
@@ -26,7 +32,7 @@ const PdfCard = ({ cert, onClick }) => {
         };
 
         loadThumbnail();
-    }, [cert.src]);
+    }, [cert.src, cert.customThumbnail]);
 
     if (loading) {
         return (

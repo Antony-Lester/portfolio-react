@@ -7,26 +7,51 @@ const thumbnailCache = createPdfThumbnailCache();
 export const loadCertificates = () => {
   try {
     // Use webpack's require.context to dynamically import all files from certs folder
-    const importAll = (r) => {
-      return r.keys().map((item) => {
-        const src = r(item);
-        const fileName = item.replace('./', '');
-        const fileExtension = fileName.split('.').pop().toLowerCase();
-        
-        return {
-          src: typeof src === 'string' ? src : src.default || src,
-          name: fileName,
-          displayName: fileName.replace(/\.[^/.]+$/, "").replace(/[-_]/g, ' '),
-          type: fileExtension,
-          isPdf: fileExtension === 'pdf',
-          isImage: ['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp'].includes(fileExtension)
-        };
-      });
-    };
-
-    // Import all files from the certs directory
     const context = require.context('../images/certs', false, /\.(png|jpg|jpeg|gif|svg|pdf|webp)$/i);
-    return importAll(context);
+    
+    // First pass: collect all files
+    const allFiles = context.keys().map((item) => {
+      const src = context(item);
+      const fileName = item.replace('./', '');
+      const fileExtension = fileName.split('.').pop().toLowerCase();
+      const baseName = fileName.replace(/\.[^/.]+$/, "");
+      
+      return {
+        src: typeof src === 'string' ? src : src.default || src,
+        name: fileName,
+        baseName: baseName,
+        displayName: baseName.replace(/[-_]/g, ' '),
+        type: fileExtension,
+        isPdf: fileExtension === 'pdf',
+        isImage: ['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp'].includes(fileExtension)
+      };
+    });
+
+    // Create a map of base names to images for custom thumbnails
+    const imageMap = {};
+    allFiles.forEach(file => {
+      if (file.isImage) {
+        imageMap[file.baseName] = file.src;
+      }
+    });
+
+    // Second pass: link PDFs with their custom thumbnails and filter out images that are used as thumbnails
+    const pdfBaseNames = new Set(allFiles.filter(f => f.isPdf).map(f => f.baseName));
+    
+    return allFiles
+      .filter(file => {
+        // Keep all PDFs
+        if (file.isPdf) return true;
+        // Keep images that don't have a matching PDF (standalone images)
+        return !pdfBaseNames.has(file.baseName);
+      })
+      .map(file => {
+        if (file.isPdf && imageMap[file.baseName]) {
+          // PDF has a matching image - use it as custom thumbnail
+          return { ...file, customThumbnail: imageMap[file.baseName] };
+        }
+        return file;
+      });
   } catch (error) {
     console.error('Error loading certificates:', error);
     return [];
