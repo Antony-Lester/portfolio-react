@@ -1,18 +1,24 @@
 import * as pdfjsLib from 'pdfjs-dist';
 
-// Set worker source
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+// Set worker source for pdfjs-dist v5+
+// Use the worker from node_modules or CDN
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url
+).toString();
 
 export const generatePdfThumbnail = async (pdfUrl) => {
   try {
     // Load the PDF document
-    const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+    const loadingTask = pdfjsLib.getDocument(pdfUrl);
+    const pdf = await loadingTask.promise;
     
     // Get the first page
     const page = await pdf.getPage(1);
     
-    // Set up canvas
-    const viewport = page.getViewport({ scale: 1.5 });
+    // Set up canvas with a reasonable scale for thumbnails
+    const scale = 1.0;
+    const viewport = page.getViewport({ scale });
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
     

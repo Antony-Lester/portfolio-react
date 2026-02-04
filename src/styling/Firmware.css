@@ -318,3 +318,106 @@
         font-size: 1rem;
     }
 }
+
+/* ==================== LANDSCAPE ORIENTATION ==================== */
+@media (orientation: landscape) and (max-height: 600px) {
+    .firmware-header {
+        margin-bottom: 12px;
+    }
+
+    .firmware-header h1,
+    .firmware-header h2 {
+        font-size: 1.25rem;
+        margin-bottom: 4px;
+    }
+
+    .firmware-header p {
+        font-size: 0.85rem;
+    }
+
+    .firmware-navigation {
+        margin-bottom: 16px;
+        gap: 6px;
+    }
+
+    .nav-button {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+
+    .firmware-section {
+        padding: 16px;
+    }
+
+    .firmware-section h2 {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+    }
+
+    .project-card {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .project-card p {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .features-list {
+        margin: 12px 0;
+    }
+
+    .features-list h4 {
+        font-size: 0.85rem;
+    }
+
+    .features-list li {
+        font-size: 0.8rem;
+    }
+
+    .code-snippet pre {
+        padding: 10px;
+        font-size: 0.75rem;
+    }
+
+    .tech-tags {
+        gap: 4px;
+    }
+
+    .tech-tag {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+
+    .repo-link {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        margin-top: 8px;
+    }
+}
+
+/* Desktop landscape (wide screens) */
+@media (orientation: landscape) and (min-width: 1024px) and (min-height: 600px) {
+    .firmware-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+/* Portrait tall screens */
+@media (orientation: portrait) and (min-height: 900px) {
+    .firmware-section {
+        padding: 40px;
+    }
+
+    .project-card {
+        padding: 32px;
+    }
+}

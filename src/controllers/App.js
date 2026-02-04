@@ -3,6 +3,7 @@ import '../styling/App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './header';
+import Home from './Home';
 import Certs from './Certs';
 import Calculator from './Calculator';
 import Apps from './Apps'
@@ -16,7 +17,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route key='root' path='/' element={<></>} />
+          <Route key='root' path='/' element={<Home />} />
           <Route key='certs' path='/certs' element={<Certs />} />
           <Route key='calculator' path='/calculator' element={<Calculator />} />
           <Route key='date' path='/dating-app' element={<Apps />} />

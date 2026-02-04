@@ -107,3 +107,38 @@
     transform: translate(-50%,-50%);
 }
 
+/* ==================== LANDSCAPE ORIENTATION ADJUSTMENTS ==================== */
+@media (orientation: landscape) and (max-height: 600px) {
+    .main {
+        top: 56px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .scroll {
+        padding: 8px;
+        margin: 8px;
+    }
+}
+
+/* Desktop landscape (wide screens) */
+@media (orientation: landscape) and (min-width: 1024px) and (min-height: 600px) {
+    .main {
+        left: 3vw;
+        right: 3vw;
+    }
+}
+
+/* Portrait tall screens */
+@media (orientation: portrait) and (min-height: 900px) {
+    .main {
+        padding: 40px;
+    }
+
+    .scroll {
+        padding: 24px;
+    }
+}

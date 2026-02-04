@@ -333,3 +333,95 @@
         max-height: 250px;
     }
 }
+
+/* ==================== LANDSCAPE ORIENTATION ==================== */
+@media (orientation: landscape) and (max-height: 600px) {
+    .apps-header {
+        margin-bottom: 16px;
+    }
+
+    .apps-header h1 {
+        font-size: 1.25rem;
+        margin-bottom: 4px;
+    }
+
+    .apps-header p {
+        font-size: 0.85rem;
+    }
+
+    .apps-navigation {
+        margin-bottom: 16px;
+        min-height: 44px;
+        padding: 4px;
+    }
+
+    .nav-button {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        min-height: 36px;
+    }
+
+    .app-section {
+        padding: 16px;
+    }
+
+    .app-section h2 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .app-section p {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .video-container {
+        margin: 12px 0;
+    }
+
+    .video-container iframe {
+        height: 200px;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 8px;
+        margin: 12px 0;
+    }
+
+    .image-item img {
+        max-height: 120px;
+    }
+
+    .image-item p {
+        padding: 6px;
+        font-size: 0.75rem;
+    }
+
+    .tech-tags {
+        gap: 4px;
+    }
+
+    .tech-tag {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Desktop landscape (wide screens) */
+@media (orientation: landscape) and (min-width: 1024px) and (min-height: 600px) {
+    .image-gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Portrait tall screens */
+@media (orientation: portrait) and (min-height: 900px) {
+    .app-section {
+        padding: 40px;
+    }
+
+    .video-container iframe {
+        height: 500px;
+    }
+}

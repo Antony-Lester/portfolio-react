@@ -25,7 +25,7 @@ export default function Certs() {
 
     if (loading) {
         return (
-            <div className='main scroll'>
+            <div className='main certs-page'>
                 <div className='loading-container'>
                     <div className='loading-spinner'></div>
                     <p>Loading certificates...</p>
@@ -36,7 +36,7 @@ export default function Certs() {
 
     if (certs.length === 0) {
         return (
-            <div className='main scroll'>
+            <div className='main certs-page'>
                 <div className='empty-state'>
                     <svg className='empty-icon' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="currentColor"/>
@@ -50,7 +50,7 @@ export default function Certs() {
     }
 
     return (
-        <div className='main scroll'>
+        <div className='main certs-page'>
             <div className='certs-header'>
                 <h2>My Certificates</h2>
             </div>

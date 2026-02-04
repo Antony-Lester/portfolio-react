@@ -6,15 +6,16 @@ const thumbnailCache = createPdfThumbnailCache();
 // Utility to automatically load all certificates from the certs folder
 export const loadCertificates = () => {
   try {
-    // Use webpack's require.context to dynamically import all files from certs folder
-    const context = require.context('../images/certs', false, /\.(png|jpg|jpeg|gif|svg|pdf|webp)$/i);
+    // Use webpack's require.context to dynamically import all certificate files
+    const context = require.context('../images/certs', false, /\.(pdf|png|jpg|jpeg|webp)$/i);
     
-    // First pass: collect all files
-    const allFiles = context.keys().map((item) => {
+    return context.keys().map((item) => {
       const src = context(item);
       const fileName = item.replace('./', '');
       const fileExtension = fileName.split('.').pop().toLowerCase();
       const baseName = fileName.replace(/\.[^/.]+$/, "");
+      const isPdf = fileExtension === 'pdf';
+      const isImage = ['png', 'jpg', 'jpeg', 'webp'].includes(fileExtension);
       
       return {
         src: typeof src === 'string' ? src : src.default || src,
@@ -22,36 +23,10 @@ export const loadCertificates = () => {
         baseName: baseName,
         displayName: baseName.replace(/[-_]/g, ' '),
         type: fileExtension,
-        isPdf: fileExtension === 'pdf',
-        isImage: ['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp'].includes(fileExtension)
+        isPdf: isPdf,
+        isImage: isImage
       };
     });
-
-    // Create a map of base names to images for custom thumbnails
-    const imageMap = {};
-    allFiles.forEach(file => {
-      if (file.isImage) {
-        imageMap[file.baseName] = file.src;
-      }
-    });
-
-    // Second pass: link PDFs with their custom thumbnails and filter out images that are used as thumbnails
-    const pdfBaseNames = new Set(allFiles.filter(f => f.isPdf).map(f => f.baseName));
-    
-    return allFiles
-      .filter(file => {
-        // Keep all PDFs
-        if (file.isPdf) return true;
-        // Keep images that don't have a matching PDF (standalone images)
-        return !pdfBaseNames.has(file.baseName);
-      })
-      .map(file => {
-        if (file.isPdf && imageMap[file.baseName]) {
-          // PDF has a matching image - use it as custom thumbnail
-          return { ...file, customThumbnail: imageMap[file.baseName] };
-        }
-        return file;
-      });
   } catch (error) {
     console.error('Error loading certificates:', error);
     return [];

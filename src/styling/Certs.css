@@ -1,35 +1,66 @@
 /* Mobile-first Material Design 3 Certs Styling */
 
+/* Certs page specific layout */
+.certs-page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 8px !important;
+    margin: 0 !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media (min-width: 600px) {
+    .certs-page {
+        padding: 16px !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .certs-page {
+        padding: 20px !important;
+    }
+}
+
 .certs-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
     gap: 16px;
     width: 100%;
-    padding: 16px;
+    padding: 0;
     box-sizing: border-box;
+    align-content: start;
+    flex: 1;
 }
 
 /* Tablet breakpoint */
 @media (min-width: 600px) {
     .certs-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 20px;
-        padding: 24px;
     }
 }
 
 /* Desktop breakpoint */
 @media (min-width: 1024px) {
     .certs-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         gap: 24px;
-        padding: 32px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+    .certs-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
 .cert-card {
     background: var(--md-sys-color-surface-container-low, #ffffff);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 
         0px 1px 2px rgba(0, 0, 0, 0.3),
@@ -118,15 +149,26 @@
 
 /* Header styles */
 .certs-header {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .certs-header h2 {
     color: var(--md-sys-color-on-surface);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 500;
-    margin: 0 0 8px 0;
+    margin: 0;
+}
+
+@media (min-width: 600px) {
+    .certs-header {
+        margin-bottom: 16px;
+    }
+    
+    .certs-header h2 {
+        font-size: 1.5rem;
+    }
 }
 
 .certs-header p {
@@ -303,4 +345,58 @@
     height: 24px;
     border: 2px solid var(--md-sys-color-outline-variant);
     border-top: 2px solid var(--md-sys-color-primary);
+}
+
+/* ==================== LANDSCAPE ORIENTATION ==================== */
+@media (orientation: landscape) and (max-height: 600px) {
+    .certs-page {
+        padding: 4px 8px !important;
+    }
+
+    .certs-header {
+        margin-bottom: 6px;
+        padding: 0;
+    }
+
+    .certs-header h2 {
+        font-size: 1rem;
+    }
+
+    .certs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+    }
+
+    .cert-card {
+        aspect-ratio: 16/10;
+    }
+
+    .cert-pdf-preview {
+        padding: 8px;
+    }
+
+    .pdf-icon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 4px;
+    }
+
+    .cert-name {
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+}
+
+/* Desktop landscape (wide screens) */
+@media (orientation: landscape) and (min-width: 1024px) and (min-height: 600px) {
+    .certs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+/* Portrait tall screens */
+@media (orientation: portrait) and (min-height: 900px) {
+    .certs-grid {
+        gap: 24px;
+    }
 }
